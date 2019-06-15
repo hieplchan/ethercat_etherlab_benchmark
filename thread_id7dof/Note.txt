@@ -1,0 +1,27 @@
+source /home/hiep/linuxcnc-dev/scripts/rip-environment
+
+g++ -c -fPIC -L/usr/local/lib -I. -I/usr/local/include -I/usr/include/eigen3 -lorocos-kdl orocos_cnc.cpp -o orocos_cnc.o
+
+g++ -fPIC -shared orocos_cnc.o -o liborocos_cnc.so
+
+
+Copy liborocos_cnc.so to /linuxcnc-dev/lib
+
+Copy liborocos-kdl.so, liborocos-kdl.so.1.4, liborocos-kdl.so.1.4 at /usr/local/lib to /linuxcnc-dev/lib
+
+Copy orocos_cnc.h to linuxcnc-dev/include
+
+
+halcompile --install inverse_dynamics.comp
+halrun
+loadusr inverse_dynamics
+
+
+/**********TEST*********/
+g++ -c -fPIC -L/usr/local/lib -I. -I/usr/local/include -I/usr/include/eigen3 orocos_cnc.cpp -o orocos_cnc.o -lorocos-kdl
+g++ -fPIC -shared orocos_cnc.o -o liborocos_cnc.so
+
+echo $LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/home/hiep/hiep_igh/orocos_linuxcnc_7dof:$LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+gcc -L. -L/usr/local/lib -I. -I/usr/local/include -I/usr/include/eigen3 test.c -lorocos_cnc -lorocos-kdl -o test

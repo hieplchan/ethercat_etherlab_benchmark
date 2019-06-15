@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+  <hbox>
+    %Momment Bar
+    <vbox>
+      <label><text>"Moment 0"</text></label>
+      <bar><halpin>"moment0"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Moment 1"</text></label>
+      <bar><halpin>"moment1"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Moment 2"</text></label>
+      <bar><halpin>"moment2"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Moment 3"</text></label>
+      <bar><halpin>"moment3"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Moment 4"</text></label>
+      <bar><halpin>"moment4"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Moment 5"</text></label>
+      <bar><halpin>"moment5"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Moment 6"</text></label>
+      <bar><halpin>"moment6"</halpin><min_>-200</min_><max_>200</max_></bar>
+    </vbox>
+    %Joint Angles Bar
+    <vbox>
+      <label><text>"Joint Angle 0"</text></label>
+      <bar><halpin>"angle0"</halpin><min_>-20000</min_><max_>20000</max_></bar>
+
+      <label><text>"Joint Angle 1"</text></label>
+      <bar><halpin>"angle1"</halpin><min_>-20000</min_><max_>20000</max_></bar>
+
+      <label><text>"Joint Angle 2"</text></label>
+      <bar><halpin>"angle2"</halpin><min_>-20000</min_><max_>20000</max_></bar>
+
+      <label><text>"Joint Angle 3"</text></label>
+      <bar><halpin>"angle3"</halpin><min_>-20000</min_><max_>20000</max_></bar>
+
+      <label><text>"Joint Angle 4"</text></label>
+      <bar><halpin>"angle4"</halpin><min_>-20000</min_><max_>20000</max_></bar>
+
+      <label><text>"Joint Angle 5"</text></label>
+      <bar><halpin>"angle5"</halpin><min_>-20000</min_><max_>20000</max_></bar>
+    </vbox>
+    %Joint Velocities Bar
+    <vbox>
+      <label><text>"Joint Velocity 0"</text></label>
+      <bar><halpin>"vel0"</halpin><min_>-30</min_><max_>30</max_></bar>
+
+      <label><text>"Joint Velocity 1"</text></label>
+      <bar><halpin>"vel1"</halpin><min_>-30</min_><max_>30</max_></bar>
+
+      <label><text>"Joint Velocity 2"</text></label>
+      <bar><halpin>"vel2"</halpin><min_>-30</min_><max_>30</max_></bar>
+
+      <label><text>"Joint Velocity 3"</text></label>
+      <bar><halpin>"vel3"</halpin><min_>-30</min_><max_>30</max_></bar>
+
+      <label><text>"Joint Velocity 4"</text></label>
+      <bar><halpin>"vel4"</halpin><min_>-30</min_><max_>30</max_></bar>
+
+      <label><text>"Joint Velocity 5"</text></label>
+      <bar><halpin>"vel5"</halpin><min_>-30</min_><max_>30</max_></bar>
+    </vbox>
+    %Joint Accelerates Bar
+    <vbox>
+      <label><text>"Joint Accelerate 0"</text></label>
+      <bar><halpin>"acc0"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Joint Accelerate 1"</text></label>
+      <bar><halpin>"acc1"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Joint Accelerate 2"</text></label>
+      <bar><halpin>"acc2"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Joint Accelerate 3"</text></label>
+      <bar><halpin>"acc3"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Joint Accelerate 4"</text></label>
+      <bar><halpin>"acc4"</halpin><min_>-200</min_><max_>200</max_></bar>
+
+      <label><text>"Joint Accelerate 5"</text></label>
+      <bar><halpin>"acc5"</halpin><min_>-200</min_><max_>200</max_></bar>
+    </vbox>
+  </hbox>
+  <hbox>
+    <label><text>"Time"</text></label>
+    <bar><halpin>"time"</halpin><min_>-200</min_><max_>200</max_></bar>
+  </hbox>
+</pyvcp>

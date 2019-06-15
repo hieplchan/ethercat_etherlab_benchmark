@@ -1,0 +1,74 @@
+/**
+  ******************************************************************************
+  * @file    inverse_dynamics.comp
+  * @author  hiep.lchan@gmail.com
+  * @date    6-January-2018
+  * @brief   Embedded Orocos KDL for 7DOF Robot arm to LinuxCNC project.
+  *          This is a source file to create inverse_dynamics
+  *          LinuxCNC HAL userspace component.
+	*/
+component inverse_dynamics "Calculate moment of Robot Arm from angle positions, velocities, accelerates";
+option userspace;
+option extra_link_args "-lorocos_cnc -lorocos-kdl";
+
+pin in float joint_pos1;
+pin in float joint_pos2;
+pin in float joint_pos3;
+pin in float joint_pos4;
+pin in float joint_pos5;
+pin in float joint_pos6;
+pin in float joint_pos7;
+
+pin in float joint_vel1;
+pin in float joint_vel2;
+pin in float joint_vel3;
+pin in float joint_vel4;
+pin in float joint_vel5;
+pin in float joint_vel6;
+pin in float joint_vel7;
+
+pin in float joint_acc1;
+pin in float joint_acc2;
+pin in float joint_acc3;
+pin in float joint_acc4;
+pin in float joint_acc5;
+pin in float joint_acc6;
+pin in float joint_acc7;
+
+pin out float joint_mm1;
+pin out float joint_mm2;
+pin out float joint_mm3;
+pin out float joint_mm4;
+pin out float joint_mm5;
+pin out float joint_mm6;
+pin out float joint_mm7;
+
+pin out float time_exe;
+
+license "GPL";
+;;
+
+#include <sys/time.h>
+#include <orocos_cnc.h>
+
+void user_mainloop(void)
+{
+  struct momentType moment;
+  clock_t last_time;
+  while(1)
+  {
+    FOR_ALL_INSTS()
+    {
+      moment = inverse_dynamic(joint_pos1, joint_pos2, joint_pos3, joint_pos4, joint_pos5, joint_pos6, joint_pos7, joint_vel1, joint_vel2, joint_vel3, joint_vel4, joint_vel5, joint_vel6, joint_vel7, joint_acc1, joint_acc2, joint_acc3, joint_acc4, joint_acc5, joint_acc6, joint_acc7);
+      joint_mm1 = moment.mm1;
+      joint_mm2 = moment.mm2;
+      joint_mm3 = moment.mm3;
+      joint_mm4 = moment.mm4;
+      joint_mm5 = moment.mm5;
+      joint_mm6 = moment.mm6;
+      joint_mm7 = moment.mm7;
+      time_exe = (clock() - last_time) / 1.0;
+      last_time = clock();
+    }
+  }
+}
